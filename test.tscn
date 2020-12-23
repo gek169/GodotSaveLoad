@@ -2,7 +2,7 @@
 
 [ext_resource path="res://test.gd" type="Script" id=1]
 [ext_resource path="res://myenv.tres" type="Environment" id=2]
-[ext_resource path="res://assets/Sound Effects/Futuristic Toy Gun Fire Sound 4 Zube Tube.wav" type="AudioStream" id=3]
+[ext_resource path="res://Sound Effects/Laser Blast 1 No PFX Zube Tube.wav" type="AudioStream" id=3]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.16, 0.678, 1, 0.12549 )

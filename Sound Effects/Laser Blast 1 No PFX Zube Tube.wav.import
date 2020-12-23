@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Laser Blast 1 No PFX Zube Tube.wav-3f972e857d6f2011a093e03d34a56f17.sample"
+
+[deps]
+
+source_file="res://Sound Effects/Laser Blast 1 No PFX Zube Tube.wav"
+dest_files=[ "res://.import/Laser Blast 1 No PFX Zube Tube.wav-3f972e857d6f2011a093e03d34a56f17.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
