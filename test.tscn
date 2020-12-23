@@ -1,0 +1,201 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://test.gd" type="Script" id=1]
+[ext_resource path="res://myenv.tres" type="Environment" id=2]
+[ext_resource path="res://assets/Sound Effects/Futuristic Toy Gun Fire Sound 4 Zube Tube.wav" type="AudioStream" id=3]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.16, 0.678, 1, 0.12549 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.266667, 0.266667, 0.266667, 1 )
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color( 0.4, 0.4, 0.4, 1 )
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id=3]
+content_margin_left = 20.0
+content_margin_right = 20.0
+content_margin_top = 16.0
+content_margin_bottom = 16.0
+bg_color = Color( 0.2, 0.2, 0.2, 1 )
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color( 0.333333, 0.333333, 0.333333, 1 )
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.133333, 0.133333, 0.133333, 1 )
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color( 0.266667, 0.266667, 0.266667, 1 )
+border_blend = true
+
+[sub_resource type="Theme" id=5]
+Button/colors/font_color = Color( 0.88, 0.88, 0.88, 1 )
+Button/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
+Button/colors/font_color_hover = Color( 0.94, 0.94, 0.94, 1 )
+Button/colors/font_color_pressed = Color( 1, 1, 1, 1 )
+Button/constants/hseparation = 2
+Button/fonts/font = null
+Button/styles/disabled = null
+Button/styles/focus = SubResource( 1 )
+Button/styles/hover = SubResource( 2 )
+Button/styles/normal = SubResource( 3 )
+Button/styles/pressed = SubResource( 4 )
+
+[sub_resource type="CubeMesh" id=6]
+size = Vector3( 20, 2, 20 )
+
+[sub_resource type="SpatialMaterial" id=7]
+albedo_color = Color( 0.423529, 0.964706, 0.0156863, 1 )
+
+[sub_resource type="BoxShape" id=8]
+extents = Vector3( 10, 1, 10 )
+
+[sub_resource type="BoxShape" id=9]
+extents = Vector3( 10.4271, 1, 0.499256 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1.68179
+margin_top = 0.840897
+margin_right = 1.68176
+margin_bottom = 0.840881
+theme = SubResource( 5 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -599.5
+margin_top = -297.0
+margin_right = -267.5
+margin_bottom = 62.0
+custom_constants/separation = 20
+alignment = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+margin_right = 332.0
+margin_bottom = 48.0
+rect_min_size = Vector2( 0, 48 )
+custom_colors/font_color = Color( 0.8, 0.0392157, 0.984314, 1 )
+text = "haha funny text!!!"
+align = 1
+valign = 1
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+margin_top = 68.0
+margin_right = 332.0
+margin_bottom = 114.0
+text = "Bruh!"
+
+[node name="Button2" type="Button" parent="VBoxContainer"]
+margin_top = 134.0
+margin_right = 332.0
+margin_bottom = 180.0
+text = "No click bro"
+
+[node name="ResetAllButton" type="Button" parent="VBoxContainer"]
+margin_top = 200.0
+margin_right = 332.0
+margin_bottom = 246.0
+text = "Reset All"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button5" type="Button" parent="VBoxContainer"]
+margin_top = 266.0
+margin_right = 332.0
+margin_bottom = 312.0
+text = "Save"
+
+[node name="Button4" type="Button" parent="VBoxContainer"]
+margin_top = 332.0
+margin_right = 332.0
+margin_bottom = 378.0
+text = "Load"
+
+[node name="Button3" type="Button" parent="VBoxContainer"]
+margin_top = 398.0
+margin_right = 332.0
+margin_bottom = 444.0
+text = "Quit"
+
+[node name="Spatial" type="Spatial" parent="."]
+
+[node name="Camera" type="Camera" parent="Spatial"]
+transform = Transform( 1, 0, 0, 0, 0.925144, 0.379617, 0, -0.379617, 0.925144, 0, 7.4476, 15.5394 )
+environment = ExtResource( 2 )
+
+[node name="Floor" type="StaticBody" parent="Spatial"]
+
+[node name="MeshInstance" type="MeshInstance" parent="Spatial/Floor"]
+mesh = SubResource( 6 )
+material/0 = SubResource( 7 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Spatial/Floor"]
+shape = SubResource( 8 )
+
+[node name="SphereClones" type="Node" parent="Spatial"]
+
+[node name="Sun" type="DirectionalLight" parent="Spatial"]
+transform = Transform( 0.806991, 0.486126, 0.335331, 0, -0.567815, 0.823156, 0.590563, -0.66428, -0.458222, 12.3033, 9.54126, 0 )
+shadow_enabled = true
+
+[node name="Wall" type="StaticBody" parent="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.19043, -9.3536 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Spatial/Wall"]
+shape = SubResource( 9 )
+
+[node name="Wall2" type="StaticBody" parent="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.19043, 10.0833 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Spatial/Wall2"]
+shape = SubResource( 9 )
+
+[node name="Wall3" type="StaticBody" parent="Spatial"]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, -10.0562, 2.19043, 0.76378 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Spatial/Wall3"]
+shape = SubResource( 9 )
+
+[node name="Wall4" type="StaticBody" parent="Spatial"]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 10.3792, 2.19043, 0.76378 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Spatial/Wall4"]
+shape = SubResource( 9 )
+
+[node name="TGF" type="AudioStreamPlayer3D" parent="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.2298, 12.1433 )
+stream = ExtResource( 3 )
+unit_db = 14.845
+pitch_scale = 1.21
+max_distance = 500.0
+
+[node name="SphereSpawn" type="Spatial" parent="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.16206, 0 )
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_button2_pressed"]
+[connection signal="pressed" from="VBoxContainer/ResetAllButton" to="." method="_on_reset_all_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button5" to="." method="_on_ButtonSave_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button4" to="." method="_on_ButtonLoad_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button3" to="." method="on_quit_pressed"]
